@@ -61,20 +61,20 @@ h1,h2,h3,h4,h5,h6 {
 h1 {
     font-size: 2.5em;
 }
-h2{
+h2 {
     font-size: 1.75em;
 }
-h3{
+h3 {
     font-size: 1.25em;
 }
-#heading, footer{
+#heading, footer {
     background-color: #06A816;
     color: #ffffff;
 }
-header h1{
+header h1 {
     text-shadow: 2px 2px 5px #000000;
 }
-header p{
+header p {
     font-style:italic;
 }
 nav {
@@ -105,6 +105,10 @@ figcaption {
     margin: 0 auto;
     text-align: center;
 }
+dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
 @media screen and (min-width: 428px) {
     header{
@@ -122,6 +126,8 @@ figcaption {
 @media screen and (min-width: 834px){
     header section {
         display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
         
     }
 }
