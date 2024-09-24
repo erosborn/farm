@@ -128,14 +128,23 @@ dl {
         display: flex;
         flex-wrap: wrap;
         justify-content:space-between;
-        
+    }
+    #fruit div, #vegetables div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media screen and (min-width: 1280px){
-
+    #fruit div, #vegetables div{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media screen and (min-width: 1440px){
-
+    #fruit div, #vegetables div{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
