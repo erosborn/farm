@@ -54,6 +54,15 @@ table {
 :root {
     font-family: "Habibi", serif;
     font-size: 1.25em;
+    --green:#06A816;
+    --orange:#E75D02;
+    --black:#000000;
+    --white:#ffffff;
+}
+
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+body {
+    min-width: 428px;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: "Irish Grover", serif;
@@ -64,15 +73,13 @@ h1 {
 h2 {
     font-size: 1.75em;
 }
-h3 {
-    font-size: 1.25em;
-}
-#heading, footer {
-    background-color: #06A816;
-    color: #ffffff;
+header, footer {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px;
 }
 header h1 {
-    text-shadow: 2px 2px 5px #000000;
+    text-shadow: 2px 2px 5px var(--black);
 }
 header p {
     font-style:italic;
@@ -81,10 +88,10 @@ nav {
     margin: 50px;
 }
 nav a {
-    background-color: #E75D02;
-    color: #ffffff;
+    background-color: var(--orange);
+    color: var(--white);
     display: block;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--white);
     border-radius: 5px;
     margin: 10px 0;
     padding: 5px;
@@ -93,58 +100,68 @@ main {
     padding: 10px;
     line-height: 1.5;
 }
+.photo-grid {
+    display: grid;
+    gap: 50px;
+}
+.photo-grid h3{
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 10px;
+}
+figure{
+    display: grid;
+    justify-content: center;
+
+}
 figure img {
     z-index: -1;
+    grid-area: 1 / 1;
 }
 figcaption {
-    background-color: #0000007a;
-    color: #ffffff;
-    position: relative;
-    top: -150px;
+    background-color: #0000009f;
+    color: var(--white);
+    grid-area: 1 / 1;
     z-index: 1;
-    margin: 0 auto;
     text-align: center;
+    margin: auto 25%;
+    padding: 10px;
 }
 dl {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
-@media screen and (min-width: 428px) {
-    header{
-        text-align: center;
-    }
-    #heading{
-        padding: 5px 0;
-    }
-    #heading p {
-        padding: 10px;
-    }
 
-}
+
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
 @media screen and (min-width: 834px){
+    body{
+        min-width: 834px;
+    }
     header section {
         display: flex;
         flex-wrap: wrap;
         justify-content:space-between;
     }
-    #fruit div, #vegetables div{
-        display: grid;
+    .photo-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media screen and (min-width: 1280px){
-    #fruit div, #vegetables div{
-        display: grid;
+    body{
+        min-width: 1280px;
+    }
+    .photo-grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media screen and (min-width: 1440px){
-    #fruit div, #vegetables div{
-        display: grid;
+    body{
+        min-width: 1440px;
+    }
+    .photo-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
