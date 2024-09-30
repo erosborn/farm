@@ -153,25 +153,26 @@ figcaption {
     margin: auto 25%;
     padding: 10px;
 }
-#contact {
-    text-align: center;
-    padding: 1.75em 0;
-    line-height: 1.5em;
-
-}
-#hours {
+#contact, #hours {
     text-align: center;
     line-height: 1.5em;
     padding: 1em;
 }
+
 #hours dt, #hours dd {
     display: inline;
+}
+#hours dt::after {
+    content: "- ";
+}
+footer h2 {
+    padding-top: 1em;
 }
 footer p {
     background-color: var(--white);
     color: var(--green);
     text-align: center;
-    height: 2em;
+    height: 1.75em;
     padding: 0.25em;
 }
 
@@ -208,6 +209,16 @@ footer p {
     .photo-grid {
         grid-template-columns: 1fr 1fr;
     }
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #contact, #hours {
+        padding: 1em;
+    }
+    footer p {
+        grid-column-start: span 2;
+    }
 }
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media screen and (min-width: 1280px){
@@ -219,23 +230,28 @@ footer p {
         grid-template: auto auto / auto;
         text-align: left;
         padding: 5px;
-        position: relative
+        position: relative;
     }
     header p {
         padding: 1em 0;
     }
     nav {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
+        display: grid;
         position: absolute;
         top: 0;
+        right: 0;
+        width: 55%;
     }
-    nav li:first-child {
-        margin-left: 0;
+    nav a {
+        justify-content: space-evenly;
     }
     .photo-grid {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    #contact, #hours {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: .75em .25em;
     }
 }
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
