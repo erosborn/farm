@@ -72,29 +72,54 @@ h1 {
 }
 h2 {
     font-size: 1.75em;
+    padding: .5rem 0;
+}
+h3, text {
+    font-size: 1.25em;
 }
 header, footer {
     background-color: var(--green);
     color: var(--white);
-    padding: 10px;
+}
+header {
+    padding: 5px 0;
+    display: grid;
+    grid-template: auto auto / auto;
+    text-align: center;
+    justify-content: center;
 }
 header h1 {
     text-shadow: 2px 2px 5px var(--black);
 }
 header p {
     font-style:italic;
+    padding: 1em;
 }
 nav {
-    margin: 50px;
+    margin: 50px auto;
 }
 nav a {
+    display: grid;
+    grid-template: auto auto / 1fr;
+    place-content: center;
+    text-align: center;
     background-color: var(--orange);
     color: var(--white);
-    display: block;
-    border: 1px solid var(--white);
+    border: solid 2px var(--white);
     border-radius: 5px;
-    margin: 10px 0;
+    height: 30px;
+    width: 300px;
     padding: 5px;
+    text-decoration: none;
+    margin: 1em auto;
+}
+#top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    margin: 20px 0;
 }
 main {
     padding: 10px;
@@ -107,12 +132,13 @@ main {
 .photo-grid h3{
     grid-column: 1 / -1;
     text-align: center;
+    margin-top: 1em;
+    margin-bottom: -50px;
     padding: 10px;
 }
 figure{
     display: grid;
     justify-content: center;
-
 }
 figure img {
     z-index: -1;
@@ -127,21 +153,57 @@ figcaption {
     margin: auto 25%;
     padding: 10px;
 }
-dl {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+#contact {
+    text-align: center;
+    padding: 1.75em 0;
+    line-height: 1.5em;
 
+}
+#hours {
+    text-align: center;
+    line-height: 1.5em;
+    padding: 1em;
+}
+#hours dt, #hours dd {
+    display: inline;
+}
+footer p {
+    background-color: var(--white);
+    color: var(--green);
+    text-align: center;
+    height: 2em;
+    padding: 0.25em;
+}
 
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
 @media screen and (min-width: 834px){
     body{
         min-width: 834px;
     }
-    header section {
+    header {
         display: flex;
         flex-wrap: wrap;
         justify-content:space-between;
+        padding: 15px;
+    }
+    header h1 {
+        padding: 5px;
+    }
+    nav {
+        margin: 30px auto;
+    }
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    nav li {
+        flex-basis: 50%;
+    }
+    #top {
+        flex-basis: 100%;
+        margin: 20px 15px;
     }
     .photo-grid {
         grid-template-columns: 1fr 1fr;
@@ -151,6 +213,26 @@ dl {
 @media screen and (min-width: 1280px){
     body{
         min-width: 1280px;
+    }
+    header {
+        display: grid;
+        grid-template: auto auto / auto;
+        text-align: left;
+        padding: 5px;
+        position: relative
+    }
+    header p {
+        padding: 1em 0;
+    }
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+    nav li:first-child {
+        margin-left: 0;
     }
     .photo-grid {
         grid-template-columns: 1fr 1fr 1fr;
